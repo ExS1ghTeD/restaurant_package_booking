@@ -27,7 +27,6 @@ class HomePage extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Icon(Icons.account_circle_outlined, size: 30),
                   ],
                 ),
               ),
@@ -38,7 +37,7 @@ class HomePage extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(15),
                   child: Image.network(
-                    'https://img.freepik.com/free-photo/shrimp-cajun-butter-sauce_1147-458.jpg',
+                    'https://www.smithandwollensky.com/wp-content/uploads/2022/12/Chicago-private-evetns-hero-2000x1335.jpg',
                     height: 180,
                     width: double.infinity,
                     fit: BoxFit.cover,
