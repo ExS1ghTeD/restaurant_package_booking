@@ -10,7 +10,7 @@ import 'user_list_page.dart';
 import 'admin_packages_page.dart';
 import 'admin_home_page.dart';
 import 'admin_reservations_page.dart';
-import 'login_page.dart';
+import 'welcome_page.dart';
 
 class AccountPage extends StatefulWidget {
   final bool isAdmin;
@@ -37,7 +37,7 @@ class _AccountPageState extends State<AccountPage> {
     if (mounted) {
       Navigator.pushAndRemoveUntil(
         context,
-        MaterialPageRoute(builder: (context) => const LoginPage()),
+        MaterialPageRoute(builder: (context) => const WelcomePage()),
         (route) => false,
       );
     }
