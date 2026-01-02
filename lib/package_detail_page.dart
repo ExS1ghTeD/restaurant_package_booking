@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:firebase_auth/firebase_auth.dart'; // Add this for Guest check
 import 'review_book_page.dart';
-import 'login_page.dart'; // Add this to navigate guests to login
+import 'welcome_page.dart';
 
 class PackageDetailPage extends StatefulWidget {
   final String packageName;
@@ -53,11 +53,11 @@ class _PackageDetailPageState extends State<PackageDetailPage> {
               Navigator.pop(ctx);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const LoginPage()),
+                MaterialPageRoute(builder: (context) => const WelcomePage()),
               );
             },
             child: const Text(
-              'Login',
+              'Login/ Register',
               style: TextStyle(color: Color(0xFFC084FC)),
             ),
           ),
