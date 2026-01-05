@@ -226,7 +226,15 @@ class _LoginPageState extends State<LoginPage> {
               width: double.infinity,
               height: 55,
               child: OutlinedButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  // Added SnackBar for Google Sign-In placeholder
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Google Sign-In coming soon!'),
+                      duration: Duration(seconds: 2),
+                    ),
+                  );
+                },
                 icon: const Icon(
                   Icons.g_mobiledata,
                   size: 30,

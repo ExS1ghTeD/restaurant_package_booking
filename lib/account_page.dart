@@ -89,8 +89,9 @@ class _AccountPageState extends State<AccountPage> {
   List<Widget> get _userScreens => [
     const HomePage(),
     const PackagesPage(),
-    MyReservationsPage(onExplorePackages: () => _onItemTapped(1)),
-    _buildProfileContent(),
+    if (!widget.isGuest) // Only include this screen if NOT a guest
+      MyReservationsPage(onExplorePackages: () => _onItemTapped(1)),
+    _buildProfileContent(), // This will now correctly be at index 2 for guests
   ];
 
   @override

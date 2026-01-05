@@ -52,12 +52,17 @@ class _RegisterPageState extends State<RegisterPage> {
           });
 
       // Success: Navigate to Account Page
+      // After successfully saving user data to Firestore
       if (mounted) {
-        Navigator.pushReplacement(
+        Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(
-            builder: (context) => const AccountPage(isAdmin: false),
+            builder: (context) => const AccountPage(
+              isAdmin: false, // New registrations are always users, not admins
+              isGuest: false, // <--- EXPLICITLY set this to false
+            ),
           ),
+          (route) => false, // Clears the navigation stack for a clean start
         );
       }
     } on FirebaseAuthException catch (e) {
