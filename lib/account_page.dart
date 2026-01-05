@@ -151,7 +151,6 @@ class _AccountPageState extends State<AccountPage> {
                       email,
                       style: const TextStyle(color: Colors.grey, fontSize: 13),
                     ),
-                    trailing: const Icon(Icons.notifications_none, size: 30),
                   ),
                 );
               },
@@ -163,7 +162,15 @@ class _AccountPageState extends State<AccountPage> {
                 leading: const Icon(Icons.person_outline),
                 title: const Text('Account setting'),
                 trailing: const Icon(Icons.edit_outlined),
-                onTap: () {},
+                onTap: () {
+                  // Added SnackBar for Account Settings placeholder
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Account settings coming soon!'),
+                      duration: Duration(seconds: 2),
+                    ),
+                  );
+                },
               ),
             ),
             const SizedBox(height: 20),
@@ -174,7 +181,7 @@ class _AccountPageState extends State<AccountPage> {
                   const Divider(height: 1),
                   _buildMenuTile(Icons.chat_bubble_outline, 'Feedback'),
                   const Divider(height: 1),
-                  _buildMenuTile(Icons.star_border, 'Rate us'),
+                  _buildMenuTile(Icons.star_border, 'Rate Us'),
                   const Divider(height: 1),
                   _buildMenuTile(Icons.arrow_upward, 'New Version'),
                 ],
@@ -227,7 +234,15 @@ class _AccountPageState extends State<AccountPage> {
       leading: Icon(icon, color: const Color(0xFF374151)),
       title: Text(title, style: const TextStyle(color: Color(0xFF374151))),
       trailing: const Icon(Icons.chevron_right, color: Colors.grey),
-      onTap: () {},
+      onTap: () {
+        // Triggers a SnackBar for any menu tile pressed
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('$title feature coming soon!'),
+            duration: const Duration(seconds: 2),
+          ),
+        );
+      },
     );
   }
 }
