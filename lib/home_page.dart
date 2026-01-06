@@ -122,11 +122,11 @@ class HomePage extends StatelessWidget {
             title,
             style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
-          const Icon(
-            Icons.arrow_forward_ios,
-            color: Color(0xFFC084FC),
-            size: 18,
-          ),
+          // const Icon(
+          //   Icons.arrow_forward_ios,
+          //   color: Color(0xFFC084FC),
+          //   size: 18,
+          // ),
         ],
       ),
     );
